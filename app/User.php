@@ -15,6 +15,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table='users';
+
+    protected $primaryKey='id';
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -36,4 +39,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tipo($idtipo)
+      {
+        $resul=TipoUsuario::find($idtipo);
+        if(isset($resul)){
+         return $resul->nombre;
+        }
+        else
+        {
+          return "sin definir";
+        }
+        
+      }
 }
