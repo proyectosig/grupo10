@@ -17,6 +17,7 @@ class Empresa extends Migration
             $table->bigIncrements('id_empresa');
             $table->string('nombre');
             $table->string('giro');
+           # $table->foreign('id_cuenta')->references('id')->on('cuenta_empresa')->onDelete('cascade');
         });  
     }
 
@@ -27,6 +28,6 @@ class Empresa extends Migration
      */
     public function down()
     {
-        Schema::drop('empresa');
+        Schema::dropIfExists('empresa');
     }
 }

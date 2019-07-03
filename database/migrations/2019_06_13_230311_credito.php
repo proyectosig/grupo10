@@ -15,14 +15,15 @@ class Credito extends Migration
     {
          Schema::create('credito', function (Blueprint $table) {
             $table->bigIncrements('id_credito');
-            $table->integer('id_cuenta');
+            $table->integer('id_cuenta')->unsigned();
             $table->date('fechainicio');
             $table->date('fechafinal');
             $table->float('monto');
             $table->float('interes');   
-            $table->bool('estado');
+            $table->boolean('estado');
             $table->date('periodo');
             $table->float('saldo');
+           # $table->foreign('id_cuenta')->references('id')->on('cuenta')->onDelete('cascade');
 
         });
     }
@@ -34,6 +35,6 @@ class Credito extends Migration
      */
     public function down()
     {
-        Schema::drop('credito');
+        Schema::dropIfExists('credito');
     }
 }

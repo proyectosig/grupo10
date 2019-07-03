@@ -15,8 +15,9 @@ class SocioCuenta extends Migration
     {
         Schema::create('socio_cuenta', function (Blueprint $table) {
             $table->bigIncrements('id_cuenta');
-            $table->integer('id_socio');
-            
+            $table->integer('id_socio')->unsigned();
+          #  $table->foreign('id_socio')->references('id')->on('socio')->onDelete('cascade');
+          #  $table->foreign('id_cuenta')->references('id')->on('cuenta')->onDelete('cascade');
         });  
     }
 
@@ -27,6 +28,6 @@ class SocioCuenta extends Migration
      */
     public function down()
     {
-        Schema::drop('socio_cuenta');
+        Schema::dropIfExists('socio_cuenta');
     }
 }

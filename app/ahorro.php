@@ -11,7 +11,8 @@ class ahorro extends Model
     	'id_ahorro',
     	'id_cuenta',
     	'tipo_ahorro',
-    	'tasa_interes',
+    	'monto',
+        'tasa',
     	
     ];
 

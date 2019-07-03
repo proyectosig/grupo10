@@ -14,9 +14,10 @@ class CuentaEmpresa extends Migration
     public function up()
     {
         Schema::create('cuenta_empresa', function (Blueprint $table) {
-            $table->bigIncrements('id_empresa');
-            $table->integer('id_cuenta');
-            
+            $table->bigIncrements('id_empresa')->unsigned();
+            $table->integer('id_cuenta')->unsigned();
+           # $table->foreign('id_cuenta')->references('id')->on('cuenta')->onDelete('cascade');
+          #  $table->foreign('id_empresa')->references('id')->on('empresa')->onDelete('cascade');
         });  
     }
 
@@ -27,6 +28,6 @@ class CuentaEmpresa extends Migration
      */
     public function down()
     {
-        Schema::drop('CuentaEmpresa');
+        Schema::dropIfExists('CuentaEmpresa');
     }
 }

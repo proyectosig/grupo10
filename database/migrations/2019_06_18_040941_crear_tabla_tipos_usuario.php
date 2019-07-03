@@ -4,16 +4,16 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoUsuariosTable extends Migration
+class CrearTablaTiposUsuario extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+     public function up()
     {
-        Schema::create('tipo_usuarios', function (Blueprint $table) {
+        Schema::create('tipos_usuario', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre',20);
             $table->timestamps();

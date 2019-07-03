@@ -14,10 +14,11 @@ class Ahorro extends Migration
     public function up()
     {
        Schema::create('ahorro', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('id_ahorro');
-            $table->integer('id_cuenta');
+            $table->bigIncrements('id_ahorro');
+            $table->integer('id_cuenta')->unsigned();
             $table->string('tipo_ahorro');
+            #$table->foreign('id_cuenta')->references('id')->on('credito')->onDelete('cascade');
+            
         });  
     }
 
@@ -28,6 +29,6 @@ class Ahorro extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::dropIfExists('users');
     }
 }

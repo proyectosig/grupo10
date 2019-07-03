@@ -15,7 +15,7 @@ class Empresa extends Model
 
     public function empresa_cuenta()
     {
-    	return $this->belongsTo('App\empresa_cuenta');
+    	return $this->belongsToMany('App\empresa_cuenta');
     }
 
 }

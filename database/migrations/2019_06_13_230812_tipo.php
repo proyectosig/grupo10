@@ -15,9 +15,10 @@ class Tipo extends Migration
     {
         Schema::create('tipo', function (Blueprint $table) {
             $table->bigIncrements('id_tipo');
-            $table->integer('id_credito');
+            $table->integer('id_credito')->unsigned();
             $table->string('nombre');
-          
+          #  $table->foreign('id_credito')->references('id')->on('credito')->onDelete('cascade');
+
         });  
     }
 
@@ -28,6 +29,6 @@ class Tipo extends Migration
      */
     public function down()
     {
-        Schema::drop('tipo');
+        Schema::dropIfExists('tipo');
     }
 }
