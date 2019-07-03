@@ -28,6 +28,6 @@ class Socio extends Migration
      */
     public function down()
     {
-        Schema::drop('socio');
+        Schema::dropIfExists('socio');
     }
 }

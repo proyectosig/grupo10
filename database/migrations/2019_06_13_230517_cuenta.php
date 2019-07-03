@@ -26,6 +26,6 @@ class Cuenta extends Migration
      */
     public function down()
     {
-        Schema::drop('cuenta');
+        Schema::dropIfExists('cuenta');
     }
 }

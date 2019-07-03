@@ -16,6 +16,8 @@ class credito extends Model
     	'estado',
     	'periodo',
     	'saldo',
+        'transaccion',
+        'deuda',
     ];
 
     public function cuenta()
